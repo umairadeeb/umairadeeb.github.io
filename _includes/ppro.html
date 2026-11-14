@@ -1,0 +1,46 @@
+{% assign p = site.data.profile %}
+<section id="ppro" aria-labelledby="ppro-h">
+  <h2 id="ppro-h">PPRO</h2>
+  <div class="employer-head">
+    <h3>{{ p.ppro.employer }}</h3>
+    <div class="row"><span class="pill role">{{ p.ppro.titles }}</span></div>
+    <p class="muted small">{{ p.ppro.place_dates }}</p>
+  </div>
+  <p>{{ p.ppro.intro }}</p>
+
+  <svg class="gantt" id="ppro-gantt" role="group" aria-label="Timeline of PPRO projects from 2020 to today"></svg>
+
+  <div class="filters no-print">
+    <p class="control-label" id="skill-filter-label">Highlight projects by technology</p>
+    <ul class="chips" id="skill-chips" aria-labelledby="skill-filter-label"></ul>
+    <p class="filter-status" id="filter-status" aria-live="polite"></p>
+  </div>
+
+  <div id="projects">
+    {% for pr in p.ppro.projects %}
+    <details class="project" data-collapsible id="{{ pr.id }}" data-start="{{ pr.start }}" data-end="{{ pr.end }}" data-short="{{ pr.short | escape }}" data-tags="{{ pr.tags | join: ',' | escape }}">
+      <summary>
+        <h3>{{ pr.title }}</h3>
+        <p class="when">{% if pr.lead %}<span class="pill role">Project lead</span> {% endif %}<span class="pill date">{{ pr.when }}</span></p>
+        <p class="gist">{{ pr.gist }}</p>
+      </summary>
+      <ul>
+        {% for b in pr.bullets %}<li>{{ b }}</li>{% endfor %}
+      </ul>
+      <ul class="tags">{% for t in pr.tags %}<li class="pill tag">{{ t }}</li>{% endfor %}</ul>
+    </details>
+    {% endfor %}
+
+    {% if p.ppro.also %}
+    <details class="project" data-collapsible id="p-also">
+      <summary>
+        <h3>{{ p.ppro.also.title }}</h3>
+        <p class="gist">Further platform and operations work across the same years.</p>
+      </summary>
+      <ul>
+        {% for b in p.ppro.also.bullets %}<li>{{ b }}</li>{% endfor %}
+      </ul>
+    </details>
+    {% endif %}
+  </div>
+</section>

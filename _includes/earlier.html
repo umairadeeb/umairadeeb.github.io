@@ -1,0 +1,17 @@
+{% assign p = site.data.profile %}
+<section id="earlier" aria-labelledby="earlier-h">
+  <h2 id="earlier-h">Earlier roles</h2>
+  <div class="earlier">
+    {% for r in p.earlier %}
+    <details class="project role-item" data-collapsible>
+      <summary>
+        <p class="when"><span class="pill date">{{ r.years }}</span></p>
+        <h3>{{ r.title }}</h3>
+        <p class="org">{{ r.org }}</p>
+        {% if r.summary %}<p class="gist">{{ r.summary }}</p>{% endif %}
+      </summary>
+      {% if r.details %}<ul>{% for d in r.details %}<li>{{ d }}</li>{% endfor %}</ul>{% endif %}
+    </details>
+    {% endfor %}
+  </div>
+</section>

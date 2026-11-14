@@ -1,0 +1,19 @@
+{% assign p = site.data.profile %}
+<section id="impact" aria-labelledby="impact-h">
+  <h2 id="impact-h">{{ p.impact.title }}</h2>
+  <dl class="ledger">
+    {% for m in p.impact.metrics %}
+    <div><dt>{{ m.value }}</dt><dd>{{ m.text }}</dd></div>
+    {% endfor %}
+  </dl>
+  {% assign b = p.impact.benchmark %}
+  {% assign max = 1 %}
+  {% for r in b.rows %}{% if r.value > max %}{% assign max = r.value %}{% endif %}{% endfor %}
+  <figure class="figure" id="vuln-figure" data-max="{{ max }}">
+    <h3>{{ b.title }}</h3>
+    {% for r in b.rows %}
+    <div class="hbar{% if r.good %} good{% endif %}"><span class="name">{{ r.name }}</span><span class="track"><span class="fill" data-value="{{ r.value }}"></span></span><span class="val">{{ r.value }}</span></div>
+    {% endfor %}
+    <figcaption>{{ b.caption }}</figcaption>
+  </figure>
+</section>

@@ -1,0 +1,13 @@
+<section id="career" aria-labelledby="career-h">
+  <h2 id="career-h">Career</h2>
+  <p class="muted small">Drag the slider to see where I was and what I was working on at any point since 2004.</p>
+  <div class="timeline-wrap">
+    <div class="scrubber no-print">
+      <label for="year-slider">Point in time</label>
+      <input type="range" id="year-slider" min="0" max="270" step="1" value="270">
+      <output id="year-out" for="year-slider"></output>
+    </div>
+    <svg class="gantt" id="career-gantt" role="img" aria-label="Timeline of roles from 2004 to today"></svg>
+    <div class="readout" id="career-readout" aria-live="polite"></div>
+  </div>
+</section>

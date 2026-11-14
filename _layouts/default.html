@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% assign p = site.data.profile %}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ p.seo.title }}</title>
+<meta name="description" content="{{ p.seo.description }}">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="{{ site.favicon | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+  /* Apply the saved theme before first paint to avoid a flash. White is the default. */
+  try { if (localStorage.getItem("cv-theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
+</script>
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+<div class="page">
+  {% include rail.html %}
+  <main>
+    {{ content }}
+    <footer>Last updated {{ p.updated }}.</footer>
+  </main>
+</div>
+<script type="application/json" id="career-data">{{ p.career | jsonify }}</script>
+<script src="{{ '/assets/js/cv.js' | relative_url }}"></script>
+</body>
+</html>

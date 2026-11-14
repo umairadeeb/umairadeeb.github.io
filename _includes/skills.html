@@ -1,0 +1,9 @@
+{% assign p = site.data.profile %}
+<section id="skills" aria-labelledby="skills-h">
+  <h2 id="skills-h">Skills</h2>
+  <div class="toolbox">
+    {% for s in p.skills %}
+    <div><h3>{{ s.title }}</h3><p>{{ s.text }}</p></div>
+    {% endfor %}
+  </div>
+</section>

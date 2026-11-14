@@ -1,0 +1,318 @@
+# ---------------------------------------------------------------------------
+# CV content. Edit this file only; layout, style and scripts need no changes.
+#
+# Dates:    "YYYY-MM". An end date of "present" means "today".
+# Order:    lists render in the order written here (timelines sort by date).
+# Text:     plain text. Use "|" blocks for long text. Wrap values containing
+#           a colon in quotes.
+# ---------------------------------------------------------------------------
+
+updated: "November 2026"        # shown in the footer
+
+seo:
+  title: "Umair Adeeb Shahid | Senior Platform Engineer"
+  description: "Umair Adeeb Shahid, Senior Platform Engineer in Munich. Developer platforms, Kubernetes, cloud migrations, security and AI platforms."
+
+name: Umair Adeeb Shahid
+role: Senior Platform Engineer
+place: Munich, Germany
+photo: images/profile-circle.jpg
+
+links:
+  linkedin: https://www.linkedin.com/in/umairadeeb
+  github: https://github.com/umairadeeb
+
+# Email is never printed in the page HTML. Keep it split in two parts.
+email:
+  user: umair
+  domain: overthosehills.com
+
+about:
+  lede: Platform engineer with 20+ years in infrastructure, from network administration to building developer and AI platforms.
+  body: "At PPRO, a regulated global payments provider, I build the paved path that engineering teams use to ship, secure and run payment services. I led two company-wide programmes end to end: the move from GitLab to GitHub, and an internal AI platform now used by 350+ employees. Most of my work is making the secure way the easy way, so teams get compliant repositories, secrets, images and access by default instead of by request."
+
+impact:
+  title: Impact at PPRO
+  metrics:
+    - value: "350+"
+      text: employees using the internal AI platform through Claude, with the same number of Claude Enterprise seats rolled out
+    - value: "~200"
+      text: repositories and 300+ users moved from GitLab to GitHub across 16+ teams and 6+ domains
+    - value: "70+"
+      text: AWS accounts across 15+ teams using the secrets sync tool I built
+    - value: "~140"
+      text: repositories across 9+ domains built on hardened base images I created
+    - value: "10+"
+      text: payment services and 5+ production databases migrated with zero downtime
+    - value: "1,000+"
+      text: merged pull requests, plus 75+ architecture docs, decision records and guides
+  benchmark:
+    title: Known vulnerabilities in a Java base image
+    rows:
+      - name: Standard Debian-based image
+        value: 63
+      - name: Hardened base image
+        value: 1
+        good: true
+    caption: Internal benchmark comparing a standard OpenJDK image with the hardened Chainguard Wolfi image teams now build on.
+
+# ---------------------------------------------------------------------------
+# Career timeline (slider + chart). One row per employer.
+# ---------------------------------------------------------------------------
+career:
+  - label: Homenet Communications
+    title: Jr. Network Administrator
+    place: Karachi
+    start: "2004-06"
+    end: "2006-09"
+    note: Network monitoring, user accounts, customer support and web server setup.
+  - label: Stanley Telecom
+    title: Network Administrator
+    start: "2006-10"
+    end: "2007-04"
+    note: Network and system monitoring, troubleshooting and web layouts.
+  - label: Global Exhibitions
+    full_name: Global Exhibitions & Marketing
+    title: Web Developer / Network Administrator
+    place: Karachi
+    start: "2007-05"
+    end: "2008-03"
+    note: Network administration plus web templates and dynamic pages.
+  - label: PTCL
+    title: IT Support / Web Development
+    place: Karachi
+    start: "2008-03"
+    end: "2010-09"
+    note: Web portal development, group policies and contact center workstation management.
+  - label: Sybrid
+    title: System Engineer
+    place: Karachi
+    start: "2010-07"
+    end: "2011-05"
+    note: "Moved the company to open-source systems: Ubuntu desktops, Zimbra mail, OpenLDAP and Samba."
+  - label: Etilize
+    title: Linux Systems Administrator
+    place: Karachi
+    start: "2011-01"
+    end: "2013-03"
+    note: Linux servers, Amazon EC2 and Rackspace hosts, MySQL, Tomcat and Bash automation.
+  - label: Primatics Financial
+    title: System Engineer to Senior Linux System Administrator
+    place: Karachi
+    start: "2013-03"
+    end: "2017-10"
+    note: RHEL and CentOS fleets, Amazon EC2, Puppet, Splunk, Zabbix and Docker.
+  - label: Nisum
+    title: Lead, then Senior Lead DevOps Engineer
+    place: Karachi
+    start: "2017-11"
+    end: "2020-02"
+    note: CI/CD with Jenkins, Chef, Ansible and Spinnaker. Kubernetes and Helm deployments.
+  - label: Wirecard
+    title: DevOps Engineer / SRE
+    place: Munich
+    start: "2020-03"
+    end: "2020-08"
+    note: DevOps and site reliability engineering.
+  - label: PPRO
+    title: Platform Engineer, now Senior Platform Engineer
+    place: Munich
+    start: "2020-08"
+    end: present
+    note: Developer platform, GitHub adoption, secrets and supply chain security, cloud migrations and an internal AI platform.
+
+# ---------------------------------------------------------------------------
+# PPRO section
+# ---------------------------------------------------------------------------
+ppro:
+  employer: PPRO Holdings GmbH
+  titles: Senior Platform Engineer, previously Platform Engineer
+  place_dates: Munich, Germany. August 2020 to present.
+  intro: Developer Enablement team for a global payments provider regulated as an e-money and payment institution. I own internal platform products used by every engineering domain, and I lead projects rather than people.
+  projects:
+    - id: p-ai
+      short: Internal AI platform
+      title: Internal AI platform
+      lead: true
+      start: "2026-03"
+      end: present
+      when: March 2026 to present
+      gist: Designed and led a governed AI platform (model gateway, tool gateway and agent hosting) that connects people and agents to company systems without handing model credentials to teams.
+      bullets:
+        - Took the MCP tool gateway to general availability with Engineering and Security sign-off. 350+ employees use it through Claude, with OAuth, read-only scoping, human approval for write actions, audit logging, and Amazon Bedrock Guardrails screening tool traffic in both directions for personal data, secrets and prompt injection.
+        - Built an OpenAI-compatible model gateway with Bedrock to Vertex AI failover, hashed API keys, per-team model access, per-user daily token budgets and per-request cost attribution in Datadog, which made LLM spend visible and bounded per team.
+        - Ran the Claude Enterprise rollout to 350+ seats with Okta SCIM sync, domain groups, a self-serve skills marketplace and a governed intake process for new tool integrations.
+        - Built an AI incident-triage agent in Slack that on-call monitors tag automatically for first-line investigation.
+        - Launched an agent hosting platform with 3 production agents, including a legal knowledge assistant, with persistent memory and organisation-wide guardrail prompts.
+      tags: [Kubernetes, AgentGateway, kagent, Amazon Bedrock, Vertex AI, MCP, Okta, Datadog, Helm, Python]
+
+    - id: p-migration
+      short: Gateway migration and data center exit
+      title: Payment gateway migration and data center exit
+      start: "2024-11"
+      end: "2026-02"
+      when: November 2024 to February 2026
+      gist: Moved a core payment gateway, its services and its databases to a new AWS landing zone with zero downtime, clearing the way to shut down the legacy data center.
+      bullets:
+        - Migrated 10+ payment gateway services and 5+ production databases from a legacy AWS organisation to a new landing zone with zero downtime.
+        - Made every cutover reversible with Helm charts, progressive-delivery promote, abort and rollback pipelines, and weighted DNS traffic shifting. Moved static IPs and set up mTLS on load balancers so merchant-facing endpoints never changed.
+        - Contributed to disconnecting the legacy data center in February 2026, with the whole gateway now running on Kubernetes.
+      tags: [Kubernetes, Helm, Argo Rollouts, AWS, Terraform, GitHub Actions, Datadog]
+
+    - id: p-security
+      short: Secrets, supply chain and access
+      title: Secrets, supply chain and production access
+      start: "2023-09"
+      end: "2025-12"
+      when: 2023 to 2025
+      gist: Gave every team a standard way to handle secrets, base images and production access, so the secure option became the default one.
+      bullets:
+        - Built a Keeper to AWS Secrets Manager sync tool as a reusable GitHub Action. It was the company's first standard, auditable way to get secrets into CI/CD and is now used by 70+ AWS accounts across 15+ teams.
+        - Created hardened base container images (Chainguard Wolfi, JVM and Node.js, multi-arch, weekly automated rebuilds), now used by ~140 repositories across 9+ domains. In benchmarks they cut known vulnerabilities from 63 to 1.
+        - Replaced static cloud credentials with GitHub OIDC, gated production behind GitHub Environments, blocked insecure OIDC subject claims in account vending, and moved automation from personal tokens to GitHub Apps.
+      tags: [Keeper, AWS Secrets Manager, GitHub Actions, OIDC, Chainguard, Docker, JFrog Artifactory]
+
+    - id: p-github
+      short: GitLab to GitHub adoption
+      title: GitLab to GitHub adoption
+      lead: true
+      start: "2022-10"
+      end: "2024-12"
+      when: October 2022 to 2024
+      gist: Led the company-wide move to GitHub, with governance, identity and self-service built in from the first repository.
+      bullets:
+        - "Led the programme from proof of concept through enterprise setup, domain onboarding and repository migration: ~200 repositories and 300+ users across 16+ teams and 6+ domains."
+        - Set governance from day one: Okta SSO, SCIM and team sync, audit log streaming to Datadog, SonarQube and Jira integrations, an organisation-wide required check that blocks non-compliant repositories, and weekly progress reports to stakeholders.
+        - Designed a self-service repository vending tool (Terraform, Terragrunt, GitOps) so teams create repositories that meet branch protection, code ownership and PCI approval rules without waiting on the platform team.
+        - Built ephemeral self-hosted runners on AWS ECS for deploying into private VPCs, GKE runners for heavy builds, and a shared library of reusable workflows used across domains.
+      tags: [GitHub Actions, Terraform, Terragrunt, Okta, Datadog, AWS, GKE, SonarQube]
+
+    - id: p-cost
+      short: Cost and platform modernisation
+      title: Cost and platform modernisation
+      start: "2024-01"
+      end: "2026-06"
+      when: 2024 to 2026
+      gist: Found savings across cloud and observability spend and helped move the Kubernetes fleet to a cheaper, more flexible compute model.
+      bullets:
+        - Did the initial research for moving from EKS Fargate to EKS Auto Mode and assisted the migration. The published release projects a 20 to 25% compute cost reduction, with 24 clusters (about a third of the fleet) on Auto Mode at launch.
+        - "Found savings across AWS, Datadog and other cloud services: rightsized legacy clusters, retired CI runners and VPN hosts, and moved databases onto reserved-instance coverage."
+        - Wrote the proposal for moving infrastructure as code from Terraform to OpenTofu and moved the team's own pipelines over.
+      tags: [Kubernetes, AWS, Datadog, OpenTofu, Terraform]
+
+    - id: p-k8s
+      short: Kubernetes and CI foundations
+      title: Kubernetes platform and CI foundations
+      start: "2020-08"
+      end: "2022-12"
+      when: August 2020 to 2022
+      gist: Moved payment services out of the data center onto Kubernetes and kept the cluster fleet, delivery tooling and monitoring current and secure.
+      bullets:
+        - Migrated 5+ payment gateway services from FreeBSD jails in the data center to Kubernetes on AWS, moving public ingress to network load balancers with static IPs and upgrading TLS to 1.3 with modern ciphers.
+        - Kept multi-environment kOps clusters current through Kubernetes and cert-manager upgrades, including the Let's Encrypt root expiry, and CVE fixes for containerd and ingress-nginx.
+        - Introduced a shared GitLab CI pipeline library and moved all infrastructure projects onto it. Tuned ArgoCD for a large monorepo and set up Argo Rollouts for progressive delivery.
+        - Moved infrastructure monitoring from Prometheus to Datadog and enforced 2FA for every GitLab user.
+      tags: [Kubernetes, kOps, ArgoCD, Argo Rollouts, GitLab CI, Datadog, Prometheus, AWS]
+
+  # Items from the previous site not covered by the projects above.
+  # Shown only in Full detail mode.
+  also:
+    title: Also at PPRO
+    bullets:
+      - "Administered Kubernetes tooling: sealed-secrets, kube2iam, cert-manager, external-dns, ingress controllers and a Prometheus monitoring stack."
+      - "Continuous deployment with ArgoCD and Argo Rollouts, supporting multiple deployment strategies."
+      - "Designed and maintained Datadog monitoring for apps and services: integrations, monitors and dashboards."
+      - "Managed Terraform-based infrastructure as code for AWS, GCP, GitHub, Keeper Secrets Manager and partly Okta."
+      - "Provided on-call support and incident remediation."
+
+# ---------------------------------------------------------------------------
+# Earlier roles. "summary" is always shown; "details" only in Full detail mode.
+# ---------------------------------------------------------------------------
+earlier:
+  - years: Mar 2020 – Aug 2020
+    title: DevOps Engineer / SRE
+    org: Wirecard, Munich
+    details:
+      - Deployment automation using Rundeck and Puppet.
+      - Implementation of GitOps practices using GitLab CI.
+      - Created metrics to help with implementation of SLIs and SLOs.
+      - Immutable deployments on virtual machines using Puppet and Terraform.
+      - Wrote Puppet modules to automate execution of deployments.
+  - years: Nov 2017 – Feb 2020
+    title: Senior Lead DevOps Engineer
+    org: Nisum, Karachi. Lead DevOps Engineer before April 2018.
+    summary: Automated build and deployment of e-commerce applications with Jenkins, Chef, Ansible, Istio and Spinnaker. Designed Kubernetes and Helm deployments and set best practices for blue/green, canary and rolling releases.
+    details:
+      - Created CI/CD pipelines using a modular Jenkins Shared Library.
+      - Deployment and container orchestration using Kubernetes and Cloud Foundry.
+      - Designed automated deployments using Docker Compose and Helm charts.
+      - Rewrote node initialization and prerequisite setup from Bash to Chef in local mode.
+      - Set up and automated deployments on Microsoft Azure and Google Cloud.
+      - Automated deployment prerequisites on servers using Ansible.
+      - Developed complete CI/CD pipelines using Jenkins, GitLab/GitHub, Kubernetes, Istio and Spinnaker.
+      - Prepared best practices based on proofs of concept for deployment strategies (blue/green, rolling updates, canary, blue/green with canary).
+  - years: Mar 2013 – Oct 2017
+    title: Senior Linux System Administrator
+    org: Primatics Financial, Karachi. Grew from System Engineer to Senior Linux System Administrator.
+    summary: Ran RHEL, CentOS and Oracle Linux servers and Amazon EC2 with Puppet, TeamCity, Splunk, Zabbix, PagerDuty and VMware, and containerised services with Docker.
+    details:
+      - Administered RHEL 6/7, CentOS 6/7 and Oracle Enterprise Linux 6 servers, and Amazon EC2 based Linux servers.
+      - Managed RightScale (UI and API) to automate Amazon EC2 operations, plus Amazon S3 and OpsWorks.
+      - Administered CI tools such as TeamCity and Travis, and deployed Windows components using TeamCity builds.
+      - Managed Puppet with MCollective and its integration with GitLab.
+      - Log management and analysis with Splunk, Logstash and Graylog2.
+      - Administered monitoring tools such as Zabbix, PagerDuty and PRTG.
+      - Administered virtualization and storage, including VMware, EMC VMAX and XtremIO.
+      - Implemented Docker across the existing infrastructure and product stack, including storage and networking, with Dockerfile-based automation.
+      - Administered Alfresco and JBoss servers.
+      - Bash scripting to automate operations.
+  - years: Jan 2011 – Mar 2013
+    title: Linux Systems Administrator
+    org: Etilize, Karachi
+    summary: Administered on-site Linux servers, Amazon EC2 and Rackspace hosts, MySQL and Tomcat. Automated operations with Bash and implemented system security policy.
+    details:
+      - Monitored and administered Linux (Red Hat, Fedora, CentOS) servers, local and remote (EC2, Rackspace).
+      - Deployed and configured Java based Tomcat web applications on local and remote servers.
+      - Monitored and administered MySQL database servers.
+      - Wrote Bash, PHP and Python scripts to automate tasks.
+      - Developed a PHP and MySQL application for administering an OpenLDAP directory server.
+      - Developed a PHP and MySQL application for centralized logging of Linux services (/var/log/messages, Apache, proftpd).
+      - Tested and migrated around 150 users from Windows XP to Ubuntu 12.04.
+  - years: Jun 2004 – May 2011
+    title: Early career
+    org: Homenet Communications, Stanley Telecom, Global Exhibitions & Marketing, PTCL, Sybrid
+    summary: Network administration, IT support and web development, ending with a company-wide move to open-source systems at Sybrid (Ubuntu desktops, Zimbra mail, OpenLDAP and Samba).
+    details:
+      - "Sybrid: migrated end users from Windows XP, Vista or 7 to Ubuntu."
+      - "Sybrid: migrated email from Google hosted mail to Zimbra Collaboration Suite (Community Edition)."
+      - "Sybrid: migrated from ISA Proxy Server to a Linux based proxy and Mikrotik RouterOS."
+      - "Sybrid: migrated from Microsoft Active Directory to OpenLDAP and Samba."
+      - "PTCL: developed and maintained an online web portal."
+      - "PTCL: administered the Zimbra Collaboration Suite email server and Linux based servers."
+      - "PTCL: user administration through the ZTE agent management application and portal."
+
+skills:
+  - title: Cloud and containers
+    text: AWS (EKS, ECS, EC2, S3), GCP (GKE), Kubernetes, kOps, Docker, Helm
+  - title: Infrastructure as code
+    text: Terraform, OpenTofu, Terragrunt, Ansible, Puppet, Chef
+  - title: Delivery
+    text: GitHub Actions, GitLab CI, Jenkins, ArgoCD, Argo Rollouts, Spinnaker
+  - title: Observability and on-call
+    text: Datadog, Prometheus, Grafana, PagerDuty, OpsGenie, Splunk
+  - title: Security and identity
+    text: Okta, Keeper Secrets Manager, AWS Secrets Manager, JFrog Artifactory, Wiz, SonarQube, Chainguard
+  - title: AI platforms
+    text: Amazon Bedrock, Vertex AI, MCP, AgentGateway, kagent, Claude Enterprise
+  - title: Languages
+    text: Bash, Python
+
+education:
+  - title: MBA, Management Information Systems
+    text: Muhammad Ali Jinnah University, 2010 – 2014
+  - title: Bachelor of Commerce
+    text: University of Karachi, 2006 – 2008
+  - title: Certification
+    text: "Site Reliability Engineering: Measuring and Managing Reliability"
+  - title: Languages
+    text: English
